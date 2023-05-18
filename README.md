@@ -1,2 +1,2 @@
-# FirstRepo
-This is our first repository :)
+Devops Experts
+this is a rolling project for the course
