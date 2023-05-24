@@ -8,14 +8,14 @@ conn = pymysql.connect(host='sql8.freemysqlhosting.net', port=3306, user='sql862
 conn.autocommit(True)
 
 # Getting a cursor from Database
-cursor = conn.cursor()
+# cursor = conn.cursor()
 
 # Inserting data into table
-statementToExecute = "CREATE TABLE `"+schema_name+"`.`usersRotem`(`user_id` INT NOT NULL,`user_name` VARCHAR(50) NOT NULL,`creation_date` DATETIME, PRIMARY KEY (`user_id`));"
-cursor.execute(statementToExecute)
+# statementToExecute = "CREATE TABLE `"+schema_name+"`.`usersRotem`(`user_id` INT NOT NULL,`user_name` VARCHAR(50) NOT NULL,`creation_date` DATETIME, PRIMARY KEY (`user_id`));"
+# cursor.execute(statementToExecute)
 
-cursor.close()
-conn.close()
+# cursor.close()
+# conn.close()
 
 
 def add_user(username, user_id):
