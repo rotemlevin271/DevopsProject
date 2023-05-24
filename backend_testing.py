@@ -23,5 +23,5 @@ try:
         print('john is under id number 1')
     else:
         print('john was not stored under id 1')
-  except Exception as e:
+except Exception as e:
     print(f"Backend testing failed with the following error {e}") 
