@@ -1,7 +1,7 @@
 import os
 import signal
 from flask import Flask, request, jsonify
-from FinalProject import db_connector
+import db_connector
 
 
 app = Flask(__name__)
