@@ -1,5 +1,5 @@
 import requests
-from FinalProject.db_connector import get_user
+from db_connector import get_user
 
 print("stating the backend tesing...")
 
