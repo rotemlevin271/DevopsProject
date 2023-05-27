@@ -7,7 +7,7 @@ driver = webdriver.Chrome(service=Service("C:/Users/rotem/Downloads/chromedriver
 # navigating to URL with existing id
 driver.get('http://127.0.0.1:5001/users/get_user_data/2')
 # check if username element showing and print it
-element = driver.find_elements(By.ID, "user")
+element = driver.find_element(By.ID, "user")
 print(element)
 just_user_name = element.text
 print("User name: " + just_user_name)
