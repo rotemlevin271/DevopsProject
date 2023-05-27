@@ -12,24 +12,25 @@ try:
         print(res.json())
     else:
         raise Exception("test failed")
+
+    # Get request to check if user exists
+    res2 = requests.get('http://127.0.0.1:5000/data/2')
+    if res2.ok:
+        print(res.json())
+        print('data equals the posted data')
+    else:
+        raise Exception("test failed")
+
+    # check posted data is stored in DB
+    user_name = get_user(2)
+    if user_name == 'kobi':
+        print('rotem is under id number 2')
+    else:
+        raise Exception("test failed")
+
 except Exception as e:
     print(f"Backend testing failed with the following error {e}") 
     
-# Get request to check if user exists
-res2 = requests.get('http://127.0.0.1:5000/data/2')
-if res2.ok:
-    print(res.json())
-    print('data equals the posted data')
-else:
-    raise Exception("test failed")
-
-# check posted data is stored in DB
-user_name = get_user(2)
-if user_name == 'kobi':
-    print('rotem is under id number 2')
-else:
-    raise Exception("test failed")
-
 # starting a webdriver session
 driver = webdriver.Chrome(service=Service("C:/Users/rotem/Downloads/chromedriver_win32/chromedriver.exe"))
 driver.implicitly_wait(100)
