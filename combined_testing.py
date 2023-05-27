@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 from db_connector import get_user
 # Post request to add new user
-res = requests.post('http://127.0.0.1:5000/users/2', json={"user_name":"rotem"})
+res = requests.post('http://127.0.0.1:5000/users/2', json={"user_name":"kobi"})
 if res.ok:
     print(res.json())
 else:
