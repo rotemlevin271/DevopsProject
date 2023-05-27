@@ -12,7 +12,9 @@ try:
         print(res.json())
     else:
         raise Exception("test failed")
-
+except Exception as e:
+    print(f"Backend testing failed with the following error {e}") 
+    
 # Get request to check if user exists
 res2 = requests.get('http://127.0.0.1:5000/data/2')
 if res2.ok:
