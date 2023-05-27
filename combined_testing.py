@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-from FinalProject.db_connector import get_user
+from db_connector import get_user
 # Post request to add new user
 res = requests.post('http://127.0.0.1:5000/users/9', json={"user_name":"adi"})
 if res.ok:
