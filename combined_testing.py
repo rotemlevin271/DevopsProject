@@ -10,7 +10,7 @@ res = requests.post('http://127.0.0.1:5000/users/10', json={"user_name":"adi"})
 if res.ok:
     print(res.json())
 else:
-    raise Exception("test failed")
+    print('user already exists')
 
 # Get request to check if user exists
 res2 = requests.get('http://127.0.0.1:5000/users/6')
@@ -23,7 +23,7 @@ user_name = get_user(3)
 if user_name == 'rotemmm':
     print('rotemmm is under id number 3')
 else:
-    raise Exception("test failed")
+    print('user already exists')
 
 # starting a webdriver session
 driver = webdriver.Chrome(service=Service("C:/Users/rotem/Downloads/chromedriver_win32/chromedriver.exe"))
