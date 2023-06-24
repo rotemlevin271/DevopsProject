@@ -1,12 +1,14 @@
 pipeline {
     agent any
     
-    environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker_hub')
-    }
+    
     
     options {
         buildDiscarder(logRotator(numToKeepStr: '20', daysToKeepStr: '5'))
+    }
+    
+    environment {
+    DOCKERHUB_CREDENTIALS = credentials('docker_hub')
     }
     
     stages {
