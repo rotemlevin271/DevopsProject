@@ -3,4 +3,4 @@ services:
   rest_app:
     image: rest_app
     ports:
-      - 8080:5000
+      - 8081:8080
