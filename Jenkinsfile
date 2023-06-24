@@ -1,8 +1,6 @@
 pipeline {
     agent any
     
-    
-    
     options {
         buildDiscarder(logRotator(numToKeepStr: '20', daysToKeepStr: '5'))
     }
@@ -23,13 +21,13 @@ pipeline {
                     }
                 }
                 // Pull code from your GitHub repository holding your previous project (part 1)
-                bat 'git.exe clone https://github.com/rotemlevin271/DevopsProject.git my_project'
+                bat 'git.exe clone https://github.com/rotemlevin271/DevopsProject.git'
             }
         }
         
         stage('Install requirements') {
             steps {
-                bat 'python -m pip install -r my_project/requirements.txt'
+                bat 'python -m pip install -r requirements.txt'
             }
         }
         
@@ -74,7 +72,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Build Docker Image for rest_app
-                bat 'docker build -t rest_app my_project/.'
+                bat 'docker build -t rest_app .'
             }
         }
         
@@ -104,7 +102,7 @@ pipeline {
         stage('Run Docker Compose-up') {
             steps {
                 // Run docker compose 
-                bat 'docker-compose -f my_project/docker-compose.yml up -d'
+                bat 'docker-compose -f docker-compose.yml up -d'
             }
         }
         
@@ -113,7 +111,7 @@ pipeline {
                 // Run docker_backend_testing.py
                 script {
                     try {
-                        bat 'python my_project/docker_backend_testing.py'
+                        bat 'python docker_backend_testing.py'
                     }
                     catch (err){
                         println err
