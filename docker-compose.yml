@@ -1,4 +1,4 @@
-version: ${COMPOSE_VERSION}
+version: 3.8
 services:
   rest_app:
     image: rest_app:3.1
