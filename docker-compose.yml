@@ -1,6 +1,6 @@
 version: ${COMPOSE_VERSION}
 services:
   rest_app:
-    image: rest_app:${IMAGE_TAG}
+    image: rest_app:3.1
     ports:
       - 8081:8080
